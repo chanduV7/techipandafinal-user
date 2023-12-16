@@ -1,0 +1,280 @@
+.header-container-main{
+    width: 100%;
+  
+  
+    .header-container{
+      width: 100%;
+      // height: 8rem;
+      padding: 1rem 4rem 1rem 4rem;
+      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 15px solid orange;
+      box-shadow: 0 0.1rem 0.3rem;
+      flex-wrap: wrap;
+      .logo-container{
+        width: 10%;
+        display: flex;
+        justify-content: start;
+         .logo{
+          width: 100%;
+          img{
+            width: 100%;
+          }
+         }
+      }
+      .search-container{
+        width: 25%;
+        .search{
+          width: 100%;
+        
+           display: flex;
+           justify-content: center;
+           align-items: center;
+          //  border: 3px solid rgb(31, 30, 30);
+          box-shadow: 0 0 0.3rem;
+           padding: 0.2rem 0.8rem 0.4rem 0.8rem;
+           border-radius: 28px;
+           .inputSearch{
+            width: 94%;
+              input{
+                 width: 100%;
+                 height: 2.5rem;
+                 outline: none;
+                 border: none;
+              }
+           }
+           .search-btn{
+            width: 8%;
+            
+             button{
+              width: 100%;
+              height: 2.5rem;
+              background: none;
+              border: none;
+              .search-icon{
+                font-size: 1.6rem;
+              }
+             }
+           }
+        }
+      }
+      .ifollow{
+        // width: 25%;
+        height: 3rem;
+        padding-top: 0.8rem;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+        color: rgb(7, 224, 7);
+        border: 3px solid rgb(7, 239, 7);
+        border-radius: 24px;
+        padding: 0.3rem;
+        }
+      
+      }
+      .profile-icon-container{
+        // width: 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        .profile-name{
+             
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 0.7rem;
+          border-radius: 50%;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 1.8rem;
+          width: 3.3rem;
+          height: 3.3rem;
+          background-color: orange;
+          border-radius: 50%;
+         p{
+          padding-top: 0rem;
+         }
+        }
+      }
+    }
+    .profile-dropdown{
+      position: absolute;
+      top: 11.5%;
+      right: 0%;
+    
+      ul{
+        list-style: none;
+        line-height: 2rem;
+        background-color: rgb(239, 195, 123);
+        padding: 0.4rem;
+        border-radius: 2%;
+        border: 1PX solid;
+        border-radius: 10px;
+        li{
+          font-size: 1rem;
+          padding: 0.2rem;
+          font-family: 500;
+          cursor: pointer;
+          &:hover{
+            background-color: rgb(240, 217, 178);
+          }
+        }
+      }
+    }
+  }
+  
+  .display{
+     display: block;
+  }
+  .display-none{
+    display: none;
+  }
+  
+  
+  @media only screen and (min-width : 320px) and (max-width : 480px){
+    .header-container-main{
+      width: 100%;
+    
+    
+      .header-container{
+        width: 100%;
+        // height: 8rem;
+        padding: 1rem 2rem 1rem 1rem;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 15px solid orange;
+        box-shadow: 0 0.1rem 0.3rem;
+        flex-wrap: wrap;
+        .logo-container{
+          width: 28%;
+          display: flex;
+          justify-content: start;
+           .logo{
+            width: 100%;
+            img{
+              width: 100%;
+            }
+           }
+        }
+        .search-container{
+          width: 50%;
+          .search{
+            width: 100%;
+          
+             display: flex;
+             justify-content: end;
+             align-items: center;
+            
+            box-shadow: 0 0 0rem;
+             padding: 0rem;
+             border-radius: 0px;
+             .inputSearch{
+              width: 94%;
+              display: none;
+                input{
+                   width: 100%;
+                   height: 2.5rem;
+                   outline: none;
+                   border: none;
+                }
+             }
+             .search-btn{
+              width: 8%;
+              
+               button{
+                width: 100%;
+                height: 2.5rem;
+                background: none;
+                border: none;
+                .search-icon{
+                  font-size: 1.3rem;
+                }
+               }
+             }
+          }
+        }
+        .ifollow{
+          // width: 25%;
+          height: 3rem;
+          padding-top: 0.8rem;
+          
+          display: flex;
+  
+          justify-content: center;
+          align-items: center;
+          display: none;
+          p{
+          color: rgb(7, 224, 7);
+          border: 3px solid rgb(7, 239, 7);
+          border-radius: 24px;
+          padding: 0.3rem;
+          }
+        
+        }
+        .profile-icon-container{
+          // width: 25%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+          .profile-name{
+               
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0.7rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.8rem;
+            width: 3.3rem;
+            height: 3.3rem;
+            background-color: orange;
+            border-radius: 50%;
+           p{
+            padding-top: 0rem;
+           }
+          }
+        }
+      }
+      .profile-dropdown{
+        position: absolute;
+        top: 11.5%;
+        right: 0%;
+      
+        ul{
+          list-style: none;
+          line-height: 2rem;
+          background-color: rgb(239, 195, 123);
+          padding: 0.4rem;
+          border-radius: 2%;
+          border: 1PX solid;
+          border-radius: 10px;
+          li{
+            font-size: 1rem;
+            padding: 0.2rem;
+            font-family: 500;
+            cursor: pointer;
+            &:hover{
+              background-color: rgb(240, 217, 178);
+            }
+          }
+        }
+      }
+    }
+    
+    .display{
+       display: block;
+    }
+    .display-none{
+      display: none;
+    }
+    
+  }
