@@ -13,6 +13,7 @@ import ViewCompany from "./components/viewCompany";
 import SavedJobs from "./components/savedJobs";
 import SearchJob from "./components/searchJob";
 import Profile from "./components/profile";
+import SearchSkill from "./components/searchSkill";
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +57,9 @@ function App() {
     {
       path: "/profile/:userId",
       element : <Profile/>
+    },{
+      path: "/searchSkill/:skill",
+      element : <SearchSkill/>
     }
   ]);
   return (

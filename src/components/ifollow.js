@@ -38,7 +38,7 @@ function Ifollow() {
     <div>
       <Header />
       <div className="container ">
-        <div className="ifollow" > <h2>i-Follow</h2></div>
+        <div className="ifollow" > i-Follow</div>
         <div className="ifolowinp">
           <input className="inp" type="text" />
         </div>

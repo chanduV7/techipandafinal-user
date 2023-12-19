@@ -18,11 +18,11 @@ function Navigationpanel() {
           </div>
           <div>Home</div>
         </div>
-        <div className="categories">
+        <div className="categories" onClick={() => navigate("/home")}>
           <div>
             <IoSearchOutline />
           </div>
-          <div>Search</div>
+          <div >Search</div>
         </div>
         <div className="categories" onClick={() => navigate("/ifollow")}>
           <div>

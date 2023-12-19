@@ -245,7 +245,7 @@
 
 
 
-@media only screen and (min-width:320px) and (max-width:480px) {
+@media  screen and (min-width:320px) and (max-width:480px) {
   
   .card-container{
     display: block;
@@ -253,7 +253,8 @@
 
     .card{
       width:19em;
-      height:10;
+      
+      // height:10em;
       display: flex;
       border: 1px solid;
       position: relative;

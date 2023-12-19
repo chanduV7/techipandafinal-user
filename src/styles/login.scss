@@ -117,10 +117,10 @@
     }
   }
   
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
+  @media  screen and (min-width: 320px) and (max-width: 480px) {
     .login-container-main {
       width: 100vw;
-      height: 100vh;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -135,7 +135,7 @@
         .left {
           width: 100%;
           display: flex;
-  
+          
           justify-content: center;
           align-items: center;
   
