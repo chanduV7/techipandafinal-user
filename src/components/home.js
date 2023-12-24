@@ -43,13 +43,14 @@ export default function Home() {
   }, [searchState]);
 
   return (
-    <div className="" style={{ backgroundColor: "rgb(243,243,243)" }}>
+    <div className="home-container" style={{ backgroundColor: "rgb(243,243,243)" }}>
       <Header />
-      <div className=" filter " onClick={filter}>
+      <div className=" filter container " onClick={filter}>
         <div className="filter-select ">
           <div>Sort by :</div>
           <div>
             <select
+            
               onChange={(e) => {
                 if (e.target.value == "All") {
                   setFiltJobs(jobData.map((i) => i));
@@ -70,275 +71,257 @@ export default function Home() {
         </div>
       </div>
       {on ? (
-        <div className="jobs-container-main  container">
-          <div className="jobs-container-inner">
-            <div className="jobs-container">
-              {getSearchJob &&
-                getSearchJob.map((e) => {
-                  return (
-                    <div className="jobs-single shadow border container ">
-                      <div>
-                        <div className="card-1">
-                          <div>
-                            <h5 className="title">{e.title}</h5>
-                            <h5 className=" h5 text-secondary">
-                              {e.company_name}
-                            </h5>
-                            <div>
-                              <label className="h6">Role :</label>
-                              <span>{e.role}</span>
-                            </div>
-                            <div>
-                              <label className="h6">Functional Area : </label>
-                              <span>{e.functionalarea}</span>
-                            </div>
-                            <div>
-                              <label className="h6">States/Cities :</label>
-                              <span>{e.States}</span>
-                            </div>
-                            <div>
-                              <label className="h6">Employment Type :</label>
-                              <span>{e.employmenttype}</span>
-                            </div>
-                          </div>
+         <div className="jobs-container-main  container">
+         <div className="jobs-container-inner">
+           <div className="jobs-container">
+             {getSearchJob &&
+               getSearchJob.map((e) => {
+                 return (
+                   <div className="jobs-single shadow border container ">
+                     <div>
+                       {" "}
+                       <div className="card-1">
+                         <div>
+                           <h5 className="title">{e.title}</h5>
+                           <h5 className=" h5 text-secondary">
+                             {e.company_name}
+                           </h5>
+                           <div>
+                             <label className="h6">Role :</label>
+                             <span>{e.role}</span>
+                           </div>
+                           <div>
+                             <label className="h6">Functional Area : </label>
+                             <span>{e.functionalarea}</span>
+                           </div>
+                           <div>
+                             <label className="h6">States/Cities :</label>
+                             <span>{e.States}</span>
+                           </div>
+                           <div>
+                             <label className="h6">Employment Type :</label>
+                             <span>{e.employmenttype}</span>
+                           </div>
+                         </div>
 
-                          <div>
-                            <label className="h6">Skills :</label>
-                            <div
-                              className="skills container"
-                              style={{ columnGap: "0.1em" }}
-                            >
-                              {e.skills &&
-                                e.skills.split(",").map((i) => {
-                                  return (
-                                    <div>
-                                      <span className="skills-text bg-secondary">
-                                        {i}
-                                      </span>
-                                    </div>
-                                  );
-                                })}
-                            </div>
-                          </div>
-                          <div className="d-flex gap-1 container   ">
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.3rem",
-                                }}
-                                className=" text-success border border-success rounded-pill"
-                              >
-                                HIRING
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
-                              >
-                                {e.experience}
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                              >
-                                {e.salary && e.salary == "" ? (
-                                  <span className="bg-white"></span>
-                                ) : (
-                                  <span className="bg-secondary text-white rounded-pill">
-                                    {" "}
-                                    {e.salary}
-                                  </span>
-                                )}
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
-                              >
-                                {e.openings}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="card-2">
-                          <p
-                            className="random"
-                            style={{
-                              backgroundColor:
-                                "#" +
-                                Math.floor(Math.random() * 16777215).toString(
-                                  16
-                                ),
-                              color: "white",
-                            }}
-                          >
-                            {e.company_name.slice(0, 2).toUpperCase()}
-                          </p>
+                         <div>
+                           <label className="h6">Skills :</label>
+                           <div
+                             className="skills container"
+                             
+                           >
+                             {e.skills &&
+                               e.skills.split(",").map((i) => {
+                                 return (
+                                   <div>
+                                     <Link to={"/searchSkill/" + i}>
+                                       <span className="skills-text bg-secondary">
+                                         {i}
+                                       </span>
+                                     </Link>
+                                   </div>
+                                 );
+                               })}
+                           </div>
+                         </div>
+                         <div className="d-flex flex-wrap gap-1 container   hirings">
+                           <div>
+                             <span 
+                              
+                               className="hiring-01 text-success border border-success rounded-pill"
+                             >
+                               HIRING
+                             </span>
+                           </div>
+                           <div>
+                             <span
+                              
+                               className=" hiring-01 bg-secondary text-white rounded-pill"
+                             >
+                               {e.experience}
+                             </span>
+                           </div>
+                           <div>
+                             <span
+                             
+                               className="hiring-01"
+                             >
+                               {e.salary && e.salary == "" ? (
+                                 <span className="bg-white"></span>
+                               ) : (
+                                 <span className="bg-secondary text-white rounded-pill">
+                                
+                                   {e.salary}
+                                 </span>
+                               )}
+                             </span>
+                           </div>
+                           <div>
+                             <span
+                             
+                               className=" hiring-01 bg-secondary text-white rounded-pill"
+                             >
+                               {e.openings}
+                             </span>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
 
-                          <Link to={"/viewJOb/" + e._id}>
-                            {" "}
-                            <div className="viewjob">
-                              View Job <BsArrowRight />
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-            </div>
-          </div>
-        </div>
+                     <div className="card-2">
+                       <Link
+                         className="view-job-link"
+                         to={"/viewJOb/" + e._id}
+                       >
+                         {" "}
+                         <div className="viewjob">
+                           View Job <BsArrowRight />
+                         </div>
+                       </Link>
+                     </div>
+                     <p
+                       className="random"
+                       style={{
+                         backgroundColor:
+                           "#" +
+                           Math.floor(Math.random() * 16777215).toString(16),
+                         color: "white",
+                       }}
+                     >
+                       {e.company_name.slice(0, 2).toUpperCase()}
+                     </p>
+                   </div>
+                 );
+               })}
+           </div>
+         </div>
+       </div>
       ) : open ? (
         <div className="jobs-container-main  container">
-          <div className="jobs-container-inner">
-            <div className="jobs-container">
-              {filtJobs &&
-                filtJobs.map((e) => {
-                  return (
-                    <div className="jobs-single shadow border container ">
-                      <div>
-                        <div className="card-1">
+        <div className="jobs-container-inner">
+          <div className="jobs-container">
+            {filtJobs &&
+              filtJobs.map((e) => {
+                return (
+                  <div className="jobs-single shadow border container ">
+                    <div>
+                      {" "}
+                      <div className="card-1">
+                        <div>
+                          <h5 className="title">{e.title}</h5>
+                          <h5 className=" h5 text-secondary">
+                            {e.company_name}
+                          </h5>
                           <div>
-                            <h5 className="title">{e.title}</h5>
-                            <h5 className=" h5 text-secondary">
-                              {e.company_name}
-                            </h5>
-                            <div>
-                              <label className="h6">Role :</label>
-                              <span>{e.role}</span>
-                            </div>
-                            <div>
-                              <label className="h6">Functional Area : </label>
-                              <span>{e.functionalarea}</span>
-                            </div>
-                            <div>
-                              <label className="h6">States/Cities :</label>
-                              <span>{e.States}</span>
-                            </div>
-                            <div>
-                              <label className="h6">Employment Type :</label>
-                              <span>{e.employmenttype}</span>
-                            </div>
+                            <label className="h6">Role :</label>
+                            <span>{e.role}</span>
                           </div>
-
                           <div>
-                            <label className="h6">Skills :</label>
-                            <div
-                              className="skills container"
-                              style={{ columnGap: "0.1em" }}
-                            >
-                              {e.skills &&
-                                e.skills.split(",").map((i) => {
-                                  return (
-                                    <div>
+                            <label className="h6">Functional Area : </label>
+                            <span>{e.functionalarea}</span>
+                          </div>
+                          <div>
+                            <label className="h6">States/Cities :</label>
+                            <span>{e.States}</span>
+                          </div>
+                          <div>
+                            <label className="h6">Employment Type :</label>
+                            <span>{e.employmenttype}</span>
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="h6">Skills :</label>
+                          <div
+                            className="skills container"
+                            
+                          >
+                            {e.skills &&
+                              e.skills.split(",").map((i) => {
+                                return (
+                                  <div>
+                                    <Link to={"/searchSkill/" + i}>
                                       <span className="skills-text bg-secondary">
                                         {i}
                                       </span>
-                                    </div>
-                                  );
-                                })}
-                            </div>
-                          </div>
-                          <div className="d-flex  flex-wrap gap-1 container  hirings ">
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.3rem",
-                                }}
-                                className=" text-success border border-success rounded-pill"
-                              >
-                                HIRING
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
-                              >
-                                {e.experience}
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                              >
-                                {e.salary && e.salary == "" ? (
-                                  <span className="bg-white"></span>
-                                ) : (
-                                  <span className="bg-secondary text-white rounded-pill">
-                                    {" "}
-                                    {e.salary}
-                                  </span>
-                                )}
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
-                              >
-                                {e.openings}
-                              </span>
-                            </div>
+                                    </Link>
+                                  </div>
+                                );
+                              })}
                           </div>
                         </div>
-                      </div>
-                      <div>
-                        <div className="card-2">
-                          <p
-                            className="random"
-                            style={{
-                              backgroundColor:
-                                "#" +
-                                Math.floor(Math.random() * 16777215).toString(
-                                  16
-                                ),
-                              color: "white",
-                            }}
-                          >
-                            {e.company_name.slice(0, 2).toUpperCase()}
-                          </p>
-
-                          <Link to={"/viewJOb/" + e._id}>
-                            {" "}
-                            <div className="viewjob">
-                              View Job <BsArrowRight />
-                            </div>
-                          </Link>
+                        <div className="d-flex flex-wrap gap-1 container   hirings">
+                          <div>
+                            <span 
+                             
+                              className="hiring-01 text-success border border-success rounded-pill"
+                            >
+                              HIRING
+                            </span>
+                          </div>
+                          <div>
+                            <span
+                             
+                              className=" hiring-01 bg-secondary text-white rounded-pill"
+                            >
+                              {e.experience}
+                            </span>
+                          </div>
+                          <div>
+                            <span
+                            
+                              className="hiring-01"
+                            >
+                              {e.salary && e.salary == "" ? (
+                                <span className="bg-white"></span>
+                              ) : (
+                                <span className="bg-secondary text-white rounded-pill">
+                               
+                                  {e.salary}
+                                </span>
+                              )}
+                            </span>
+                          </div>
+                          <div>
+                            <span
+                            
+                              className=" hiring-01 bg-secondary text-white rounded-pill"
+                            >
+                              {e.openings}
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  );
-                })}
-            </div>
+
+                    <div className="card-2">
+                      <Link
+                        className="view-job-link"
+                        to={"/viewJOb/" + e._id}
+                      >
+                        {" "}
+                        <div className="viewjob">
+                          View Job <BsArrowRight />
+                        </div>
+                      </Link>
+                    </div>
+                    <p
+                      className="random"
+                      style={{
+                        backgroundColor:
+                          "#" +
+                          Math.floor(Math.random() * 16777215).toString(16),
+                        color: "white",
+                      }}
+                    >
+                      {e.company_name.slice(0, 2).toUpperCase()}
+                    </p>
+                  </div>
+                );
+              })}
           </div>
         </div>
+      </div>
       ) : (
         <div className="jobs-container-main  container">
           <div className="jobs-container-inner">
@@ -347,7 +330,8 @@ export default function Home() {
                 jobData.map((e) => {
                   return (
                     <div className="jobs-single shadow border container ">
-                    
+                      <div>
+                        {" "}
                         <div className="card-1">
                           <div>
                             <h5 className="title">{e.title}</h5>
@@ -376,7 +360,7 @@ export default function Home() {
                             <label className="h6">Skills :</label>
                             <div
                               className="skills container"
-                              style={{ columnGap: "0.1em" }}
+                              
                             >
                               {e.skills &&
                                 e.skills.split(",").map((i) => {
@@ -392,41 +376,33 @@ export default function Home() {
                                 })}
                             </div>
                           </div>
-                          <div className="d-flex gap-1 container   hirings">
+                          <div className="d-flex flex-wrap gap-1 container   hirings">
                             <div>
-                              <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.3rem",
-                                }}
-                                className=" text-success border border-success rounded-pill"
+                              <span 
+                               
+                                className="hiring-01 text-success border border-success rounded-pill"
                               >
                                 HIRING
                               </span>
                             </div>
                             <div>
                               <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
+                               
+                                className=" hiring-01 bg-secondary text-white rounded-pill"
                               >
                                 {e.experience}
                               </span>
                             </div>
                             <div>
                               <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
+                              
+                                className="hiring-01"
                               >
                                 {e.salary && e.salary == "" ? (
                                   <span className="bg-white"></span>
                                 ) : (
                                   <span className="bg-secondary text-white rounded-pill">
-                                    {" "}
+                                 
                                     {e.salary}
                                   </span>
                                 )}
@@ -434,18 +410,16 @@ export default function Home() {
                             </div>
                             <div>
                               <span
-                                style={{
-                                  fontSize: "0.7rem",
-                                  padding: "0 0.2rem 0 0.2rem",
-                                }}
-                                className="bg-secondary text-white rounded-pill"
+                              
+                                className=" hiring-01 bg-secondary text-white rounded-pill"
                               >
                                 {e.openings}
                               </span>
                             </div>
                           </div>
                         </div>
-                      
+                      </div>
+
                       <div className="card-2">
                         <Link
                           className="view-job-link"

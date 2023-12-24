@@ -135,72 +135,16 @@ const userId = localStorage.getItem("userId")
             </div>
           </div>
         </div>
+        <div className="description">
+            <label>JOB DESCRIPTION</label>
+            <p>{getJobDetails && getJobDetails.description}</p>
 
-        {/* <div className="description">
-          <label>JOB DESCRIPTION</label>
-          <h6>
-            Thought Minds - is a global leader in providing solutions on LLM and
-            generative AI solutions .We are seeking an experienced Business
-            Analyst with 3- 5 years of professional experience to join our team.
-            As a Business Analyst, you will play a vital role in bridging the
-            gap between business needs and technology solutions.
-          </h6>
-          <h6>Responsibilities:</h6>
-          <ul>
-            <li>
-              Collaborate with Project Manager, Business and Data Analysts and
-              other team members, as well as other stakeholders to document and
-              maintain requirements, procedures, processes, and other related
-              content in an Agile/Scrum team environment.
-            </li>
-            <li>
-              The candidate must demonstrate superior writing, editing and
-              communication skills, with a keen eye for detail.
-            </li>
-            <li>
-              Prepare, review, revise and maintain business requirement
-              documentation Gather and analyze technical information from
-              various sources to document new and changing requirements and to
-              document processes and procedures.
-            </li>
-            <li>
-              Stay updated on industry best practices, emerging technologies,
-              and business trends to propose innovative solutions and process
-              improvements.
-            </li>
-            <li>
-              Facilitate communication between business units and IT teams,
-              ensuring that all parties have a clear understanding of project
-              objectives and requirement.
-            </li>
-            <li>
-              Work with cross-functional teams to design and propose solutions,
-              including functional specifications, user stories, and mock-ups,
-              to address business challenges.
-            </li>
-          </ul>
-          <h6>Qualifications :</h6>
-          <ul>
-            <li>
-              Bachelor's degree in Business Administration, Finance, Information
-              Systems, or related field.
-            </li>
-            <li>
-              Knowledge of project management methodologies (e.g., Agile/Scrum,
-              Waterfall).
-            </li>
-            <li>
-              Certification in business analysis (e.g., CBAP, CCBA) is a plus.
-            </li>
-            <li>Willingness to travel for business needs.</li>
-            <li>Excellent communication and interpersonal skills.</li>
-            <li>Strong analytical and problem-solving skills.</li>
-            <li>
-              3-5 years of professional experience in a business analysis or
-              related role.
-            </li>
-          </ul>
-        </div> */}
+            <div className="responsibilities">
+                      <label>Responsibilities :</label>
+              <p>{getJobDetails && getJobDetails.responsibilities}</p>
+  
+            </div>
+            </div>  
         <div className="h6">
           Location : {getJobDetails && getJobDetails.States}
         </div>
@@ -232,6 +176,13 @@ const userId = localStorage.getItem("userId")
               }
               
               </div> 
+
+              <div className="container">
+            {
+              
+              <div className="abt"> {getJobDetails && getJobDetails.about}</div>
+            }
+            </div>
           </div>
           <div className="view">
             <span >View Company <FaArrowRightLong /></span>
